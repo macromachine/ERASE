@@ -92,13 +92,13 @@ The file TraceAlign.py aligns the two traces from two versions
 
 Case Study
 
-In order to verify the effectiveness of ERASE, we conduct a case study on the regression fault between two versions findutils-4.3.5 and findutils-4.3.6. The detailed report can be obtained here, which shows ERASE is effective in isolating the failure-inducing changes and explaining the failure.
+In order to verify the effectiveness of ERASE, we conduct a case study on the regression fault between two versions findutils-4.3.5 and findutils-4.3.6. The detailed report can be obtained (https://drive.google.com/file/d/0B3gTTwG7vBRKeWV2bTlrNVBjaDg/view), which shows ERASE is effective in isolating the failure-inducing changes and explaining the failure.
 
 
 
 
 Experimental Results
 
-The experimental objects and results in our evaluation can be downloaded here.
+The experimental objects and results in our evaluation can be downloaded (https://drive.google.com/file/d/0B3gTTwG7vBRKT2tBOXZvVFNkZmM/view).
 
 

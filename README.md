@@ -1,3 +1,21 @@
+一. install and use intel Pin framework
+1. Download and install the pin framework from "https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads"
+2. Copy our instrument files (https://github.com/macromachine/ERASE/tree/master/Pin) to "$home/pin/source/tools/MyPinTool"
+3. Open a terminal and change work directory to "$home/pin/source/tools/MyPinTool"
+4. Execute the command "make all TARGET=ia32"
+5. Instrument the execution of target program using: "$home/pin/pin -t $home/pin/source/tools/MyPinTool/obj-ia32/srcTraceTool.so -- $target_program $parameter"
+
+二. install and use ERASE
+1. Copy all ERASE files (https://github.com/macromachine/ERASE/tree/master/ERASE) and generate the python projects
+2. The entry of project is in "DualSlice.py"
+3. First, we set the target program at Line 1872, for example, "appName = "find_b" "
+4. Second, we set the failure points at Lines 2474-2609, for example,  "set([5609]), set([-1]) at Line 2497"
+5. Lines 2054-2125 are the procedures to install the target program automatically. If we have installed the program, we can comment these codes.
+6. Lines 1949-2051 are the procedures to compare the differences between two versions, and align the same codes between two versions.
+7. We run the program, and get the results.
+
+三. Explanation of the whole projects:
+
 Given two versions of a program and a test case that passes the old version while fails the new version, we use the passing trace as a “correct reference” to examine how the failing trace produces the failure. In order to use the passing trace, we develop a new trace alignment technique to align the passing and failing traces with regard to source code changes between two versions. We then apply alignment slicing and mending on both traces to isolate the failure-inducing changes and generate a causal path for explaining the failure. The causal path not only eliminates the fault-irrelevant steps of traces as dynamic slicing, but also mends the fault-relevant steps beyond the reach of slicing.
 
 We systematically evaluate our approach with a feasibility experiment on 298 Java regressions in the Defects4J bug repository and a
